@@ -5,6 +5,11 @@ import { Text, Html } from "@react-three/drei";
 import { SceneContext } from "./App";
 import Book from "./Book";
 import anticdidone from "./assets/AnticDidone-Regular.ttf";
+import { Globals } from "@react-spring/shared";
+
+Globals.assign({
+  frameLoop: "always",
+});
 
 const AnimatedBook = animated(Book);
 const AnimatedText = animated(Text);

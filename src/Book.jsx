@@ -5,6 +5,11 @@ import { useFrame } from "@react-three/fiber";
 import { useSpring, animated } from "@react-spring/three";
 import { Clone, useGLTF, useAnimations } from "@react-three/drei";
 import { SceneContext } from "./App";
+import { Globals } from "@react-spring/shared";
+
+Globals.assign({
+  frameLoop: "always",
+});
 
 export default function Book(props) {
   const group = useRef();
