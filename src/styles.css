@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Antic Didone";
+  src: local("Antic Didone"), url(./assets/AnticDidone-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Antic Slab";
+  src: local("MyFont"), url(./assets/AnticSlab-Regular.ttf) format("truetype");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,7 +37,105 @@ body {
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
-  font-family: helvetica neue, helvetica, arial, sans-serif;
+  font-family: "Antic Slab", serif;
   color: black;
   -webkit-font-smoothing: antialiased;
+}
+
+.inner-hide {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+
+.inner-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.outer-hide > div {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+
+.outer-show > div {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-outer-container > div {
+  left: -50px !important;
+}
+
+.modal-inner-container {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  transition: opacity ease 0.5s;
+}
+
+.modal {
+  color: white;
+  font-size: 12px;
+  width: 700px;
+  margin-left: 59px;
+  margin-top: 89px;
+  padding-bottom: 20px;
+}
+
+.modal-title,
+.modal-category,
+.modal-authors {
+  font-family: "Antic Didone", serif;
+  font-weight: normal;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.modal-category {
+  text-decoration: underline;
+}
+
+.modal-title {
+  font-size: 42px;
+}
+
+.modal-description {
+  font-family: "Antic Slab", serif;
+  line-height: 30px; /* 150% */
+  font-size: 20px;
+  margin-top: 56px;
+}
+
+@keyframes fadeIn {
+  1% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  2% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  1% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

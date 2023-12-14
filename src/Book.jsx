@@ -2,6 +2,7 @@ import * as THREE from "three";
 import * as SkeletonUtils from "three/examples/jsm/utils/SkeletonUtils";
 import React, { useRef, useState, useMemo, useContext } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useSpring, animated } from "@react-spring/three";
 import { Clone, useGLTF, useAnimations } from "@react-three/drei";
 import { SceneContext } from "./App";
 
@@ -11,6 +12,7 @@ export default function Book(props) {
   const { actions, mixer } = useAnimations(animations, group);
   const [open, setOpen] = useState(false);
   const { onClickBook } = useContext(SceneContext);
+  const { selected } = useContext(SceneContext);
 
   const cloned = useMemo(() => SkeletonUtils.clone(scene), [scene]);
 
@@ -31,10 +33,12 @@ export default function Book(props) {
     mixer.update(speed);
   });
 
+  const { zShift } = useSpring({ zShift: props.bookNum === selected ? 0.5 : 0 });
+
   return (
-    <group ref={group} onClick={onClickBook} {...props}>
+    <animated.group ref={group} onClick={onClickBook} position-z={zShift} {...props}>
       <primitive object={cloned} />
-    </group>
+    </animated.group>
   );
 }
 

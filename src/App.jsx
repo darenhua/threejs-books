@@ -28,6 +28,7 @@ const App = () => {
 
   return (
     <SceneContext.Provider value={sceneContext}>
+      <div>Hello World</div>
       <Scene />
     </SceneContext.Provider>
   );
