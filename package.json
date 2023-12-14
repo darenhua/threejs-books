@@ -14,8 +14,8 @@
   ],
   "author": "Daren Hua <dhua@hamilton.edu> (https://github.com/darenhua)",
   "dependencies": {
-    "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "9.79.3",
+    "@react-spring/three": "9.6.1",
+    "@react-three/drei": "9.79.0",
     "@react-three/fiber": "8.13.5",
     "@react-three/postprocessing": "^2.15.11",
     "@vercel/analytics": "^1.1.1",
