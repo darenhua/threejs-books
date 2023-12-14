@@ -65,7 +65,7 @@ body {
 }
 
 .modal-outer-container > div {
-  left: -50px !important;
+  left: -30px !important;
 }
 
 .modal-inner-container {
@@ -109,6 +109,77 @@ body {
   line-height: 30px; /* 150% */
   font-size: 20px;
   margin-top: 56px;
+}
+
+.screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.screen {
+  width: 500px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s;
+}
+
+.title-screen-title {
+  font-size: 36px;
+}
+
+.screen a {
+  color: rgb(255, 164, 164);
+  text-decoration: none;
+}
+
+.title-screen-button-group {
+  margin-top: 20px;
+}
+
+.button-style {
+  all: unset;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-right: 12px;
+}
+
+.button-style:hover {
+  color: red;
+}
+
+.about-screen-title {
+  font-size: 42px;
+  font-family: "Antic Didone", serif;
+}
+
+.about-screen-description {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.emph {
+  color: red;
+}
+
+.link {
+  color: white;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -99;
+  max-height: 0;
 }
 
 @keyframes fadeIn {

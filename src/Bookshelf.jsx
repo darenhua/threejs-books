@@ -19,7 +19,7 @@ const Bookshelf = ({ numBooks, data }) => {
     position: index * spacing,
     shortname: data[index].shortname,
   }));
-  const { xShift, yShift, opacity } = useSpring({ xShift: shifted ? -0.5 : 0, yShift: (2 - selected) * 1.5, opacity: shifted ? 0 : 1 });
+  const { xShift, yShift, opacity } = useSpring({ xShift: shifted ? -1.5 : 0, yShift: (2 - selected) * 1.5, opacity: shifted ? 0 : 1 });
 
   return (
     <group>
